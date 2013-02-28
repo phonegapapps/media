@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="utf-8" />
+		<title>012 media API</title>
+	</head>
+
+	<body>
+	<video id="vid" poster="images/mindtree.png" preload="auto">
+		<source src="medias/html5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+		<source src="medias/html5.ogv" type='video/ogg; codecs="theora, vorbis"'>
+		<source src="medias/html5.webm" type='video/webm; codec="vp8, vorbis"'>
+		<object type="application/x-shockwave-flash">
+			<param name="movie" value="medias/html5.swf" />
+		</object>
+		<p>Please upgrade your browser</p>
+	</video>
+	<button onclick="playVid()">Play</button>
+	<button onclick="pauseVid()">Pause</button>
+	<button onclick="rewindVid()">Rewind</button>
+	<span id="display"></span>
+	<script>
+		function playVid(){
+			var vid = document.getElementById("vid");
+			vid.play();
+			var display = document.getElementById("display");
+			display.textContent = vid.currentTime;
+			
+		}
+		function pauseVid(){
+			document.getElementById("vid").pause();
+		}
+		function rewindVid(){
+			document.getElementById("vid").currentTime = 0;
+		}
+	</script>
+	</body>
+</html>
